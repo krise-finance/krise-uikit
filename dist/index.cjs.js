@@ -2343,7 +2343,7 @@ var MenuLink = function (_a) {
     var isHttpLink = href === null || href === void 0 ? void 0 : href.startsWith("http");
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     var Tag = isHttpLink ? "a" : reactRouterDom.NavLink;
-    var props = isHttpLink ? { href: href } : { to: href };
+    var props = isHttpLink ? { href: href, target: "_blank" } : { to: href };
     return React__default['default'].createElement(Tag, __assign({}, props, otherProps));
 };
 
@@ -2391,7 +2391,7 @@ var PanelFooter = function (_a) {
         React__default['default'].createElement(SocialEntry, null,
             cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
                 React__default['default'].createElement(Icon$w, { width: "24px", mr: "8px" }),
-                React__default['default'].createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 })),
+                React__default['default'].createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(6)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 })),
             React__default['default'].createElement(Flex, null, socials.map(function (social, index) {
                 var Icon = Icons$1[social.icon];
                 var iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
